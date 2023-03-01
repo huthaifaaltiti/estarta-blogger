@@ -1,4 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Handlee&display=swap");
+/* Lato font */
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap");
 
 * {
   padding: 0;
@@ -8,12 +9,31 @@
 }
 
 html {
-  font-size:10px;
+  font-size: 10px;
+}
+
+:root {
+  /* Colors: */
+  --color-pri: #dc0000;
+  --color-pri-d-1: #b00000;
+  --color-pri-d-2: #9a0000;
+
+  --color-sec: #ffdb89;
+  --color-sec-d-1: #e6c57b;
+  --color-sec-d-2: #b39960;
+  --color-sec-l-1: #ffdf95;
+  --color-sec-d-2: #ffe6ac;
+
+  --color-grey: #444;
+  --color-grey-d-1: #3d3d3d;
+  --color-grey-d-2: #303030;
+  --color-grey-l-1: #575757;
+  --color-grey-l-2: #7c7c7c;
+
+  --color-blk: #252525;
+  --color-wte: #fff;
 }
 
 body {
-  font-family: "Handlee", cursive;
+  font-family: "Lato", sans-serif;
 }
-
-
-
