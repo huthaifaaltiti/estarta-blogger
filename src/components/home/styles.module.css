@@ -78,28 +78,38 @@
   gap: 1rem;
 }
 
+.iconPara,
 .icon {
-  width: 2rem;
+  width: 1.6rem;
+
+  color: var(--color-grey-d-2);
 
   align-self: start;
+  justify-self: start;
+}
+
+.icon {
+  margin: auto 0;
+}
+
+.iconPara {
+  padding-bottom: auto;
 }
 
 .blogCard header a h2,
 .blogCard header h3,
 .blogCard p {
   display: flex;
-  align-items: center;
+  /* align-items: center; */
   gap: 0.3rem;
 }
 
-
-
-.blogCard h2 {
+.blogCard header a h2 {
   font-size: 1.6rem;
-  font-weight: bold;
-  text-decoration: none;
+}
 
-  color: black;
+.blogCard p {
+  font-size: 1.2rem;
 }
 
 .blogCard a {
@@ -113,25 +123,6 @@
   gap: 1rem;
 }
 
-.blogCard section h3 {
-  color: black;
-
-  font-size: 1.4rem;
-
-  display: flex;
-  align-items: center;
-  gap: 0.3rem;
-}
-
-.blogCard p {
-  display: flex;
-  align-items: center;
-  gap: 0.3rem;
-
+.blogCard header h3 {
   font-size: 1.2rem;
-}
-
-.paraIcon {
-  width: 2rem;
-  align-self: first baseline;
 }

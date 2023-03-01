@@ -1,3 +1,4 @@
+// react-router-dom, react
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -24,18 +25,20 @@ export default function NotFound() {
           style={{ height: "300px", width: "300px" }}
         ></Player>
 
-        <div>
+        <div className={Styles.message}>
           <p>
-            Not founded!{" "}
-            <button
-              onClick={() => {
-                nav("/");
-              }}
-            >
-              {" "}
-              <CiCircleChevLeft className={Styles.icon} /> Back to Home{" "}
-            </button>
+            Sorry! It looks that the page that you are searching about, or this link:
+            <code className={Styles.url}>{`${window.location.href}`}</code> does
+            not belong to this site 😞
           </p>
+
+          <button
+            onClick={() => {
+              nav("/");
+            }}
+          >
+            <CiCircleChevLeft className={Styles.icon} /> Back to Home
+          </button>
         </div>
       </div>
     </>

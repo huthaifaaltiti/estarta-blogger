@@ -3,8 +3,10 @@ import "../../index.css";
 import Styles from "./styles.module.css";
 import { CiUser, CiStickyNote, CiSquareChevRight } from "react-icons/ci";
 
-import useFetch from "../../hooks/useFetch";
 import { useState } from "react";
+
+// custom hook
+import useFetch from "../../hooks/useFetch";
 
 // react-router-dom
 import { Link } from "react-router-dom";
@@ -53,17 +55,19 @@ const Home = () => {
                 <header>
                   <Link to={`/single/${blog.id}`} key={blog?.id}>
                     <h2>
-                      <CiSquareChevRight className={Styles.icon} />{" "}
+                      <CiSquareChevRight className={Styles.icon} />
                       {blog?.title}
                     </h2>
                   </Link>
+
+                 
 
                   <h3>
                     <CiUser className={Styles.icon} /> {blog?.author}
                   </h3>
                 </header>
                 <p>
-                  <CiStickyNote className={Styles.icon} /> {blog?.body}
+                  <CiStickyNote className={Styles.iconPara} /> {blog?.body}
                 </p>
               </div>
             ))
