@@ -1,5 +1,5 @@
 // react-router-dom
-import { Routes, Route, BrowserRouter } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 // import Home from "./components/home/index";
 // import Header from "./components/header/index";
 // import NewBlog from "./components/newBlog/index";
