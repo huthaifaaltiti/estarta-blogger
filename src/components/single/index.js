@@ -1,10 +1,13 @@
-// import styles and icons
+// styles and icons
+import "../../index.css";
 import Styles from "./styles.module.css";
-import { CiEraser } from "react-icons/ci";
+import { CiUser, CiStickyNote, CiSquareChevRight } from "react-icons/ci";
 
-// import related files
+// react-router-dom, react
 import React from "react";
 import { useNavigate, useParams } from "react-router-dom";
+
+// custom hook
 import useFetch from "../../hooks/useFetch";
 
 export default function Single() {
@@ -32,22 +35,29 @@ export default function Single() {
     <div className={Styles.page}>
       <div className={Styles.card}>
         <header>
-          <h2>{blog.title} </h2>
-          <h2>{blog.author} </h2>
+          <h2>
+            <CiSquareChevRight className={Styles.icon} />
+            {blog.title}
+          </h2>
+          <h3>
+            <CiUser className={Styles.icon} />
+            {blog.author}
+          </h3>
         </header>
 
-        <div>
-          <p>{blog.body}</p>
-          
-          <button onClick={handleDelete}>
-            {" "}
-            <CiEraser /> Delete Blog
-          </button>
+        <div className={Styles.para}>
+          <p>
+            <CiStickyNote className={Styles.iconPara} />
+            {blog.body}
+          </p>
 
-          <button onClick={handleBackhome} className={Styles.back}>
-            {" "}
-             Back to blogs..
-          </button>
+          <div className={Styles.btns}>
+            <button onClick={handleDelete}>Delete Blog</button>
+
+            <button onClick={handleBackhome} className={Styles.back}>
+              Back to blogs
+            </button>
+          </div>
         </div>
       </div>
     </div>

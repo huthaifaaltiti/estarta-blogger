@@ -1,7 +1,7 @@
 import Styles from "./styles.module.css";
 
 const NewBlog = ({ x, setState }) => {
-  // console.log(window.location)
+ 
 
   return (
     <div className={Styles.newBlog}>

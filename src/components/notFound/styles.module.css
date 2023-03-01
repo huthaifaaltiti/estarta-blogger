@@ -6,9 +6,14 @@
 
   margin-top: 1rem;
 
-  background-color: whitesmoke;
+  background-color: var(--color-backGr);
 
   border-radius: 0.9rem;
+}
+
+.player{
+  width: 30rem;
+  height: 30rem;
 }
 
 .message {
