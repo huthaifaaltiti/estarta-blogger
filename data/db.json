@@ -23,7 +23,18 @@
       "author": "Natali",
       "title": "UX/Xi Designer",
       "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    },
+    {
+      "title": "IOS Developer",
+      "body": "Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem.",
+      "author": "John",
+      "id": "hyuTEO0"
     }
   ],
-  "Names": ["Huthaifa", "Jack", "Asma'", "Natali"]
+  "Names": [
+    "Huthaifa",
+    "Jack",
+    "Asma'",
+    "Natali"
+  ]
 }

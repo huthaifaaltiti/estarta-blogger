@@ -72,6 +72,8 @@
   width: 60%;
   height: 4rem;
 
+  font-family: sans-serif;
+
   background-color: var(--color-grey-l-2);
 
   border: 1px solid var(--color-backGr-d-1);

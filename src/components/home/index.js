@@ -2,6 +2,9 @@
 import "../../index.css";
 import Styles from "./styles.module.css";
 
+// react-helmet
+import { Helmet } from "react-helmet";
+
 // component
 import Blog from "./Blog";
 
@@ -27,6 +30,10 @@ const Home = () => {
 
   return (
     <>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Home Blogs</title>
+      </Helmet>
       {/* search bar */}
       <div className={Styles.search}>
         <input
@@ -43,7 +50,9 @@ const Home = () => {
           filteredBlogs?.map((blog) => <Blog key={blog.id} blog={blog} />)
         ) : (
           <>
-            <p className={Styles.noBlogsPara}>No blogs! Search another title.</p>
+            <p className={Styles.noBlogsPara}>
+              No blogs! Search another title.
+            </p>
           </>
         )}
 

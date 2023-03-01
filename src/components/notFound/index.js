@@ -2,6 +2,9 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
+// react-helmet
+import { Helmet } from "react-helmet";
+
 // styles, icons
 import "../../index.css";
 import Styles from "./styles.module.css";
@@ -20,6 +23,11 @@ export default function NotFound() {
 
   return (
     <>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>{`Try Again! 😞 `}</title>
+      </Helmet>
+
       <div className={Styles.page}>
         <Player
           className={Styles.player}

@@ -2,6 +2,9 @@
 import "../../index.css";
 import Styles from "./styles.module.css";
 
+// react-helmet
+import { Helmet } from "react-helmet";
+
 // react
 import React, { useRef } from "react";
 // react-router-dom
@@ -38,6 +41,11 @@ const NewBlog = () => {
 
   return (
     <div className={Styles.page}>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Create New Blog</title>
+      </Helmet>
+
       <div className={Styles.newBlog}>
         <header>
           <h2>Add a new blog</h2>

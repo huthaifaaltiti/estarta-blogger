@@ -7,6 +7,9 @@ import { CiUser, CiStickyNote, CiSquareChevRight } from "react-icons/ci";
 import React from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
+// react-helmet
+import { Helmet } from "react-helmet";
+
 // custom hook
 import useFetch from "../../hooks/useFetch";
 
@@ -33,22 +36,27 @@ export default function Single() {
 
   return (
     <div className={Styles.page}>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>{`Blog - ${blog?.title}`}</title>
+      </Helmet>
+      
       <div className={Styles.card}>
         <header>
           <h2>
             <CiSquareChevRight className={Styles.icon} />
-            {blog.title}
+            {blog?.title}
           </h2>
           <h3>
             <CiUser className={Styles.icon} />
-            {blog.author}
+            {blog?.author}
           </h3>
         </header>
 
         <div className={Styles.para}>
           <p>
             <CiStickyNote className={Styles.iconPara} />
-            {blog.body}
+            {blog?.body}
           </p>
 
           <div className={Styles.btns}>
