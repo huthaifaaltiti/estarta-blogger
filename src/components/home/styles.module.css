@@ -78,6 +78,17 @@
   gap: 1rem;
 }
 
+.titleContainer{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.iconEditTitle{
+  width: 2rem;
+  height: 2rem;
+}
+
 .iconPara,
 .icon {
   width: 1.6rem;

@@ -1,18 +1,16 @@
 // styles, icons
 import "../../index.css";
 import Styles from "./styles.module.css";
-import { CiUser, CiStickyNote, CiSquareChevRight } from "react-icons/ci";
 
-import { useState } from "react";
+import Blog from "./Blog";
 
 // custom hook
 import useFetch from "../../hooks/useFetch";
-
-// react-router-dom
-import { Link } from "react-router-dom";
+import { useState } from "react";
 
 const Home = () => {
   const [searchedValue, setSearchedValue] = useState("");
+
   const {
     data: blogs,
     loading,
@@ -50,27 +48,7 @@ const Home = () => {
           : "no blogs!"} */}
 
         {blogs?.length > 0
-          ? blogs?.map((blog) => (
-              <div className={Styles.blogCard}>
-                <header>
-                  <Link to={`/single/${blog.id}`} key={blog?.id}>
-                    <h2>
-                      <CiSquareChevRight className={Styles.icon} />
-                      {blog?.title}
-                    </h2>
-                  </Link>
-
-                 
-
-                  <h3>
-                    <CiUser className={Styles.icon} /> {blog?.author}
-                  </h3>
-                </header>
-                <p>
-                  <CiStickyNote className={Styles.iconPara} /> {blog?.body}
-                </p>
-              </div>
-            ))
+          ? blogs?.map((blog) => <Blog blog={blog} />)
           : "No blogs!"}
       </div>
     </>

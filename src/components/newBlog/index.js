@@ -2,7 +2,9 @@
 import "../../index.css";
 import Styles from "./styles.module.css";
 
+// react
 import React, { useRef } from "react";
+// react-router-dom
 import { useNavigate } from "react-router-dom";
 
 const NewBlog = () => {
@@ -15,6 +17,7 @@ const NewBlog = () => {
   });
 
   function handleChangeForm(e) {
+    // Note: here is destructuring for myRef.current obj, and get back with  these values
     myRef.current = {
       ...myRef.current,
       [e.target.name]: e.target.value,
