@@ -1,8 +1,7 @@
-// import related files
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-// import styles, icons, gif
+// styles, icons, gif
 import notfoundData from "../../assets/notfoundData.json";
 import Styles from "./styles.module.css";
 import { Player } from "@lottiefiles/react-lottie-player";
@@ -12,7 +11,6 @@ export default function NotFound() {
   const nav = useNavigate();
 
   const notFoundedGIFData = {
-    
     animationData: notfoundData,
   };
 
