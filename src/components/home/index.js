@@ -1,6 +1,7 @@
-// styles
+// styles, icons
 import "../../index.css";
 import Styles from "./styles.module.css";
+import { CiUser, CiStickyNote, CiSquareChevRight } from "react-icons/ci";
 
 import useFetch from "../../hooks/useFetch";
 import { useState } from "react";
@@ -25,13 +26,16 @@ const Home = () => {
 
   return (
     <>
+      {/* search bar */}
       <div className={Styles.search}>
         <input
           type="text"
-          placeholder="Search titles..."
+          placeholder="Search blog titles..."
           onChange={(e) => setSearchedValue(e.target.value)}
         />
       </div>
+
+      {/* Blogs from API */}
       <div className={Styles.home}>
         {/* ToDo: the main thing i need is my search, so when search will back with a searched blogs not all blogs */}
         {/* {filteredBlogs?.length > 0
@@ -45,15 +49,22 @@ const Home = () => {
 
         {blogs?.length > 0
           ? blogs?.map((blog) => (
-              <div className={Styles.blogCards}>
-                <div className={Styles.blogCard}>
+              <div className={Styles.blogCard}>
+                <header>
                   <Link to={`/single/${blog.id}`} key={blog?.id}>
-                    <h2>{blog?.title}</h2>
+                    <h2>
+                      <CiSquareChevRight className={Styles.icon} />{" "}
+                      {blog?.title}
+                    </h2>
                   </Link>
 
-                  <h3>{blog?.author}</h3>
-                  <p>{blog?.body}</p>
-                </div>
+                  <h3>
+                    <CiUser className={Styles.icon} /> {blog?.author}
+                  </h3>
+                </header>
+                <p>
+                  <CiStickyNote className={Styles.icon} /> {blog?.body}
+                </p>
               </div>
             ))
           : "No blogs!"}

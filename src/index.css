@@ -35,7 +35,20 @@ html {
   --color-blk: #252525;
   --color-wht: #fff;
 
-  --color-backGr: whitesmoke;
+  --color-backGr: #f5f5f5;
+  --color-backGr-d-1: #c4c4c4;
+  --color-backGr-d-2: #dddddd;
+  --color-backGr-d-3: #e0e0e0;
+  --color-backGr-d-4: #e7e7e7;
+  --color-backGr-l-1: #f6f6f6;
+  --color-backGr-l-2: #f9f9f9;
+
+  /* Shadows: */
+  --shadow-1:rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+  --shadow-2: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  --shadow-3: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  --shadow-4: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  --shadow-5: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 body {
