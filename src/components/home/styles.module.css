@@ -78,15 +78,31 @@
   gap: 1rem;
 }
 
-.titleContainer{
+.titleContainer {
   display: flex;
   align-items: center;
   gap: 1rem;
 }
 
-.iconEditTitle{
+.iconEditTitle {
   width: 2rem;
   height: 2rem;
+
+  margin-left: 1rem;
+
+  cursor: pointer;
+
+  padding: 0.3rem;
+
+  border-radius: 0.2rem;
+
+  background-color: var(--color-grey);
+
+  transition: all 0.2s linear;
+}
+
+.iconEditTitle:hover {
+  background-color: var(--color-grey-d-1);
 }
 
 .iconPara,
@@ -138,7 +154,50 @@
   font-size: 1.2rem;
 }
 
-
-.editTitle{
+.editTitle {
   display: flex;
+}
+
+.noBlogsPara {
+  font-size: 1.6rem;
+  font-weight: 900;
+  /* text-transform: uppercase; */
+
+  color: var(--color-pri);
+}
+
+.titleContainer h2 {
+  display: flex;
+  align-items: center;
+}
+
+.editTitle {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.editTitle span {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.editTitleIcon {
+  width: 2rem;
+  height: 2rem;
+
+  cursor: pointer;
+
+  padding: 0.3rem;
+
+  border-radius: 0.2rem;
+
+  background-color: var(--color-grey);
+
+  transition: all 0.2s linear;
+}
+
+.editTitleIcon:hover {
+  background-color: var(--color-grey-d-1);
 }

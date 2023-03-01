@@ -28,7 +28,7 @@ export default function Blog({ blog }) {
     setEditableBlog((prevBlog) => {
       return {
         ...prevBlog,
-        title: newTitle,
+        title: newTitle || prevBlog.title,
       };
     });
 
@@ -52,8 +52,14 @@ export default function Blog({ blog }) {
                   onChange={(e) => setNewTitle(e.target.value)}
                 />
                 <span>
-                  <ImCheckmark onClick={handleSave} />
-                  <ImCross onClick={() => setIsEditable(false)} />
+                  <ImCheckmark
+                    onClick={handleSave}
+                    className={Styles.editTitleIcon}
+                  />
+                  <ImCross
+                    className={Styles.editTitleIcon}
+                    onClick={() => setIsEditable(false)}
+                  />
                 </span>
               </div>
             ) : (

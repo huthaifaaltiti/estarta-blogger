@@ -2,6 +2,7 @@
 import "../../index.css";
 import Styles from "./styles.module.css";
 
+// component
 import Blog from "./Blog";
 
 // custom hook
@@ -38,9 +39,13 @@ const Home = () => {
       {/* Blogs from API */}
       <div className={Styles.home}>
         {/* ToDo: the main thing i need is my search, so when search will back with a searched blogs not all blogs */}
-        {filteredBlogs?.length > 0
-          ? filteredBlogs?.map((blog) => <Blog key={blog.id} blog={blog} />)
-          : "no blogs!"}
+        {filteredBlogs?.length > 0 ? (
+          filteredBlogs?.map((blog) => <Blog key={blog.id} blog={blog} />)
+        ) : (
+          <>
+            <p className={Styles.noBlogsPara}>No blogs! Search another title.</p>
+          </>
+        )}
 
         {/* here will be back with all blogs not the search one  */}
         {/* {blogs?.length > 0
