@@ -36,6 +36,8 @@ export default function Blog({ blog }) {
   }
 
   return (
+    // Note: in this div bellow, we used "editableBlog" not "blog", because we need the new editable blog that is destructured at line 27
+
     <div className={Styles.blogCard}>
       <header>
         <div className={Styles.titleContainer}>
