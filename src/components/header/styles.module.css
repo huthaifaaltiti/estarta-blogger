@@ -1,0 +1,78 @@
+.center {
+  width: 100%;
+  max-width: 120rem;
+
+  margin: 0 auto;
+}
+
+.header {
+  background-color: whitesmoke;
+
+  font-size: 2rem;
+  font-weight: 500;
+
+  padding: 1rem 2rem;
+
+  border-radius: .5rem;
+
+  margin-top: .5rem;
+}
+
+.header nav ul {
+  list-style: none;
+  color: #dc0000;
+
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.header nav ul li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.header nav ul li:nth-child(1) {
+  font-weight: bold;
+}
+
+.header nav ul li:not(.header nav ul li:nth-child(1)) {
+  cursor: pointer;
+
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  transition: all 0.2s linear;
+}
+
+.header nav ul li:nth-child(n + 2):not(:last-child):hover {
+  background-color: #dddddd;
+}
+
+.header nav ul li:not(:first-child):hover .icon {
+  color: #630606;
+}
+
+.header nav ul li:nth-child(2) {
+  margin-left: auto;
+}
+
+.header nav ul li:last-child {
+  background-color: #dddddd;
+
+  padding: 1rem 2rem;
+  border-radius: 0.9rem;
+
+  transition: all 0.2s linear;
+}
+
+.header nav ul li:last-child:hover {
+  background-color: #c7c7c7;
+}
+
+
+.header nav ul li a {
+ color: inherit;
+ text-decoration: none;
+}

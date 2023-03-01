@@ -1,0 +1,7 @@
+- converting between components will not require "app mounting"?
+
+- Q: 1st lec:
+ - at home comp: Q: did not work on port 8000, gave me a message: error on fetch on console. Why?
+
+ - at app comp: Q: when put <BrowserRouter></BrowserRouter> 
+ around the app content "as docs: link: https://reactrouter.com/en/main/router-components/browser-router" gave an error?

@@ -1,0 +1,11 @@
+- We can see what server has by: json-server --watch data/db.json --port 7000
+
+- 1st lecture "18-2-23": 
+ - part 1:
+  - how to fetch data from API.
+  - How to build an app's routes.
+  - useState(), useEffect().
+
+ - part 2: 
+  - 
+

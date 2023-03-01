@@ -1,0 +1,55 @@
+.page {
+  width: 100%;
+  max-width: 120rem;
+  height: 70vh;
+  margin: 0 auto;
+
+  margin-top: 1rem;
+
+  background-color: whitesmoke;
+
+  border-radius: 0.9rem;
+}
+
+.page div p {
+  font-size: 2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+}
+
+.page div p button {
+  border: none;
+  background-color: gray;
+  color: white;
+
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+
+  cursor: pointer;
+
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+  transition: all 0.1s linear;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+}
+
+.page div p button:hover {
+  transform: translateX(-1px);
+}
+
+.icon {
+  width: 2rem;
+
+  color: white;
+}
