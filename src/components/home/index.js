@@ -1,8 +1,11 @@
-// import Blog from "./Blog";
+// styles
+import "../../index.css";
 import Styles from "./styles.module.css";
+
 import useFetch from "../../hooks/useFetch";
 import { useState } from "react";
 
+// react-router-dom
 import { Link } from "react-router-dom";
 
 const Home = () => {
