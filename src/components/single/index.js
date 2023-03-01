@@ -54,7 +54,7 @@ export default function Single() {
           <div className={Styles.btns}>
             <button onClick={handleDelete}>Delete Blog</button>
 
-            <button onClick={handleBackhome} className={Styles.back}>
+            <button onClick={handleBackhome} className={Styles.backBtn}>
               Back to blogs
             </button>
           </div>

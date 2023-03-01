@@ -113,8 +113,8 @@
   justify-content: center;
   gap: 0.4rem;
 
-  background-color: var(--color-pri-l-2);
-  color: white;
+  /* background-color: var(--color-pri-l-2); */
+  color: var(--color-wht);
   border: none;
 
   cursor: pointer;
@@ -125,7 +125,15 @@
 
 .card .para .btns button:hover {
   transform: translateY(-1px);
-  background-color: var(--color-pri-l-1);
+  /* background-color: var(--color-pri-l-1); */
 
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  box-shadow: var(--shadow-3);
+}
+
+.btns button:first-child {
+  background-color: var(--color-pri);
+}
+
+.btns button:last-child {
+  background-color: var(--color-grey-d-2);
 }
