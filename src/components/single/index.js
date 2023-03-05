@@ -1,16 +1,15 @@
-// react-redux
-import { useDispatch, useSelector } from "react-redux";
-
-import { useState, useEffect } from "react";
-
 // styles and icons
 import "../../index.css";
 import Styles from "./styles.module.css";
 import { CiUser, CiStickyNote, CiSquareChevRight } from "react-icons/ci";
 
+// react-redux
+import { useDispatch, useSelector } from "react-redux";
+
 // react-router-dom, react
 import React from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import { useState, useEffect } from "react";
 
 // react-helmet
 import { Helmet } from "react-helmet";
@@ -62,8 +61,6 @@ export default function Single() {
     }
   }
 
-
-
   function handleDelete() {
     fetch(`http://localhost:7000/Blogs/${id}`, { method: "DELETE" });
     nav("/");
@@ -81,7 +78,7 @@ export default function Single() {
     <div className={Styles.page}>
       <Helmet>
         <meta charSet="utf-8" />
-        {/* <title>{`Blog - ${blog?.title}`}</title> */}
+        <title>{`Blog - ${blogs?.title}`}</title>
       </Helmet>
 
       <div className={Styles.card}>
@@ -89,7 +86,7 @@ export default function Single() {
           <h2>
             <CiSquareChevRight className={Styles.icon} />
             {blogs?.title}
-            {/* {blogTitle} */}
+           
           </h2>
           <h3>
             <CiUser className={Styles.icon} />

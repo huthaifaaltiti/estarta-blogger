@@ -1,13 +1,13 @@
-// react-redux
-import { useDispatch, useSelector } from "react-redux";
+// styles, icons
+import "../../index.css";
+import Styles from "./styles.module.css";
 
 // react
 import React, { useEffect } from "react";
 import { useState } from "react";
 
-// styles, icons
-import "../../index.css";
-import Styles from "./styles.module.css";
+// react-redux
+import { useDispatch, useSelector } from "react-redux";
 
 // react-helmet
 import { Helmet } from "react-helmet";
@@ -30,6 +30,8 @@ const Home = () => {
 
 
   // using redux store:
+  
+  
   const blogs = useSelector((state) => state.blogs);
   // const error = useSelector((state) => state.error);
 
@@ -47,16 +49,12 @@ const Home = () => {
 
       const response = await fetch("http://localhost:7000/Blogs");
       const responseData = await response.json();
-
-      // console.log("Response data: ", responseData);
     
       
       // Fetching data, Success
       dispatch({ type: "FETCH_DATA_SUCCESS", payload: responseData });
       
-      
-
-      // console.log("Blogs: ", blogs);
+    
     } catch (error) {
       // Fetching data, Failure
       dispatch({ type: "FETCH_DATA_FAILURE", payload: error.message });
