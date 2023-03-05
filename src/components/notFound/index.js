@@ -5,12 +5,10 @@ import { useNavigate } from "react-router-dom";
 // react-helmet
 import { Helmet } from "react-helmet";
 
-// styles, icons
+// styles, icons, GIF
 import "../../index.css";
 import Styles from "./styles.module.css";
 import { CiCircleChevLeft } from "react-icons/ci";
-
-// GIF: lottiefiles
 import notfoundData from "../../assets/notfoundData.json";
 import { Player } from "@lottiefiles/react-lottie-player";
 

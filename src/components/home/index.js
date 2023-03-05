@@ -15,7 +15,7 @@ import { Helmet } from "react-helmet";
 // component
 import Blog from "./Blog";
 
-// custom hook
+// custom hook (used for previous solution)
 // import useFetch from "../../hooks/useFetch";
 
 const Home = () => {
@@ -39,7 +39,7 @@ const Home = () => {
   }, []);
   const blogs = useSelector((state) => state.blogs);
 
-  console.log(blogs);
+  // console.log(blogs);
   
   async function fetchData() {
     try {

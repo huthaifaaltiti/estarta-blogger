@@ -14,7 +14,7 @@ import { useState, useEffect } from "react";
 // react-helmet
 import { Helmet } from "react-helmet";
 
-// custom hook
+// custom hook (used for previous solution)
 // import useFetch from "../../hooks/useFetch";
 
 export default function Single() {
@@ -31,7 +31,7 @@ export default function Single() {
   // stored blog
   const activeBlog = useSelector((state) => state.activeBlog);
 
-  // console.log(activeBlog);
+  // console.log("Active blog details: ", activeBlog);
 
   const dispatch = useDispatch();
 
@@ -40,9 +40,11 @@ export default function Single() {
     fetchSingleData();
 
     return () => {
+      // Note: in general useEffect does not has a return word, but this return used to delete any effects after the comp not have the desired time to mount
+
       dispatch({ type: "FETCH_DATA_SINGLE_DELETE", payload: {} });
 
-      // console.log("Out of single blog!");
+      // console.log("I am out of single blog!");
     };
   }, []);
 
@@ -65,7 +67,9 @@ export default function Single() {
 
   function handleDelete() {
     // Fetching blog, Delete
-    const resp = fetch(`http://localhost:7000/Blogs/${id}`, { method: "DELETE" });
+    const resp = fetch(`http://localhost:7000/Blogs/${id}`, {
+      method: "DELETE",
+    });
     dispatch({ type: "FETCH_DATA_SUCCESS_SIN", payload: resp });
 
     nav("/");
@@ -73,7 +77,6 @@ export default function Single() {
 
   function handleBackhome() {
     nav("/");
-    
   }
 
   // sol-1: using useFetch

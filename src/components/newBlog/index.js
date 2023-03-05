@@ -2,13 +2,14 @@
 import "../../index.css";
 import Styles from "./styles.module.css";
 
-// react-helmet
-import { Helmet } from "react-helmet";
-
 // react
 import React, { useRef } from "react";
+
 // react-router-dom
 import { useNavigate } from "react-router-dom";
+
+// react-helmet
+import { Helmet } from "react-helmet";
 
 const NewBlog = () => {
   const navigator = useNavigate();
