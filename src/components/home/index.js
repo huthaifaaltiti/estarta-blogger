@@ -30,6 +30,7 @@ const Home = () => {
   //   error,
   // } = useFetch("http://localhost:7000/Blogs");
 
+  // get data for first home render
   useEffect(() => {
     fetchData();
   }, []);
