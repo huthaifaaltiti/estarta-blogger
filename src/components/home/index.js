@@ -1,3 +1,10 @@
+// react-redux
+import { useDispatch, useSelector } from "react-redux";
+
+// react
+import React, { useEffect } from "react";
+import { useState } from "react";
+
 // styles, icons
 import "../../index.css";
 import Styles from "./styles.module.css";
@@ -9,24 +16,51 @@ import { Helmet } from "react-helmet";
 import Blog from "./Blog";
 
 // custom hook
-import useFetch from "../../hooks/useFetch";
-import { useState } from "react";
+// import useFetch from "../../hooks/useFetch";
 
 const Home = () => {
   const [searchedValue, setSearchedValue] = useState("");
 
-  const {
-    data: blogs,
-    loading,
-    error,
-  } = useFetch("http://localhost:7000/Blogs");
+  const blogs = useSelector((state) => state.blogs);
+  const dispatch = useDispatch();
+
+  // const {
+  //   data: blogs,
+  //   loading,
+  //   error,
+  // } = useFetch("http://localhost:7000/Blogs");
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  async function fetchData() {
+    try {
+      // API data request
+      dispatch({ type: "FETCH_DATA_REQUEST" });
+
+      const response = await fetch("http://localhost:7000/Blogs");
+      const responseData = await response.json();
+
+      // console.log("Response data: ", responseData);
+
+      // Fetching data, Success
+      dispatch({ type: "FETCH_DATA_SUCCESS", payload: responseData });
+
+      console.log("Blogs: ", blogs);
+    } catch (error) {
+      // Fetching data, Failure
+      dispatch({ type: "FETCH_DATA_FAILURE", payload: error.message });
+      console.log(error);
+    }
+  }
 
   const filteredBlogs = blogs?.filter((blog) =>
     blog?.title.toLowerCase().includes(searchedValue.toLowerCase())
   );
 
-  if (loading) return "Loading...";
-  if (error) return "Error happened!";
+  // if (loading) return "Loading...";
+  // if (error) return "Error happened!";
 
   return (
     <>
