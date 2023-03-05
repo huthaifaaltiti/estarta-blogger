@@ -22,6 +22,22 @@ const namesReducer = (state = initialState, action) => {
         blogs: action.payload,
       };
 
+    case "FETCH_DATA_SUCCESS_SINGLE":
+      return {
+        ...state,
+        loading: false,
+        error:null,
+        activeBlog: action.payload,
+      };
+
+      case "FETCH_DATA_SINGLE_DELETE":
+        return {
+          ...state,
+          loading: false,
+  
+          activeBlog: action.payload,
+        };
+
     case "FETCH_DATA_FAILURE":
       return {
         ...state,

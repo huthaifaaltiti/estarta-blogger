@@ -28,20 +28,19 @@ const Home = () => {
   //   error,
   // } = useFetch("http://localhost:7000/Blogs");
 
-
   // using redux store:
-  
-  
-  const blogs = useSelector((state) => state.blogs);
-  // const error = useSelector((state) => state.error);
 
+  
   const dispatch = useDispatch();
-
-  // get data for first home render
+  
+  // fetching blog
   useEffect(() => {
     fetchData();
   }, []);
+  const blogs = useSelector((state) => state.blogs);
 
+  console.log(blogs);
+  
   async function fetchData() {
     try {
       // API data request
@@ -49,12 +48,9 @@ const Home = () => {
 
       const response = await fetch("http://localhost:7000/Blogs");
       const responseData = await response.json();
-    
-      
+
       // Fetching data, Success
       dispatch({ type: "FETCH_DATA_SUCCESS", payload: responseData });
-      
-    
     } catch (error) {
       // Fetching data, Failure
       dispatch({ type: "FETCH_DATA_FAILURE", payload: error.message });
@@ -62,6 +58,7 @@ const Home = () => {
     }
   }
 
+  // blogs filtration
   const filteredBlogs = blogs?.filter((blog) =>
     blog?.title.toLowerCase().includes(searchedValue.toLowerCase())
   );

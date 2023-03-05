@@ -28,46 +28,52 @@ export default function Single() {
   const { id } = useParams();
   const nav = useNavigate();
 
-  // const[blogTitle, setBlogTitle] = useState("")
-
   // stored blog
-  const blogs = useSelector((state) => state.blogs);
+  const activeBlog = useSelector((state) => state.activeBlog);
 
-  console.log(blogs);
+  // console.log(activeBlog);
 
   const dispatch = useDispatch();
 
-    // get data for first home render
-    useEffect(() => {
-      fetchData();
-    }, []);
-  
+  // blog fetching
+  useEffect(() => {
+    fetchSingleData();
 
-  async function fetchData() {
+    return () => {
+      dispatch({ type: "FETCH_DATA_SINGLE_DELETE", payload: {} });
+
+      // console.log("Out of single blog!");
+    };
+  }, []);
+
+  async function fetchSingleData() {
     try {
-      // API data request
+      // API blog request
       dispatch({ type: "FETCH_DATA_REQUEST" });
 
       const response = await fetch(`http://localhost:7000/Blogs/${id}`);
       const responseData = await response.json();
 
-      // Fetching data, Success
-      dispatch({ type: "FETCH_DATA_SUCCESS", payload: responseData });
-     
+      // Fetching blog, Success
+      dispatch({ type: "FETCH_DATA_SUCCESS_SINGLE", payload: responseData });
     } catch (error) {
-      // Fetching data, Failure
+      // Fetching blog, Failure
       dispatch({ type: "FETCH_DATA_FAILURE", payload: error.message });
       console.log(error);
     }
   }
 
   function handleDelete() {
-    fetch(`http://localhost:7000/Blogs/${id}`, { method: "DELETE" });
+    // Fetching blog, Delete
+    const resp = fetch(`http://localhost:7000/Blogs/${id}`, { method: "DELETE" });
+    dispatch({ type: "FETCH_DATA_SUCCESS_SIN", payload: resp });
+
     nav("/");
   }
 
   function handleBackhome() {
     nav("/");
+    
   }
 
   // sol-1: using useFetch
@@ -78,26 +84,29 @@ export default function Single() {
     <div className={Styles.page}>
       <Helmet>
         <meta charSet="utf-8" />
-        <title>{`Blog - ${blogs?.title}`}</title>
+        {/* <title>{`Blog - ${blogs?.title}`}</title> */}
+        <title>{`Blog - ${activeBlog?.title}`}</title>
       </Helmet>
 
       <div className={Styles.card}>
         <header>
           <h2>
             <CiSquareChevRight className={Styles.icon} />
-            {blogs?.title}
-           
+            {/* {blogs?.title} */}
+            {activeBlog?.title}
           </h2>
           <h3>
             <CiUser className={Styles.icon} />
-            {blogs?.author}
+            {/* {blogs?.author} */}
+            {activeBlog?.author}
           </h3>
         </header>
 
         <div className={Styles.para}>
           <p>
             <CiStickyNote className={Styles.iconPara} />
-            {blogs?.body}
+            {/* {blogs?.body} */}
+            {activeBlog?.body}
           </p>
 
           <div className={Styles.btns}>
