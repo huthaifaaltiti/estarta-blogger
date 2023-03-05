@@ -21,16 +21,19 @@ import Blog from "./Blog";
 const Home = () => {
   const [searchedValue, setSearchedValue] = useState("");
 
-  const blogs = useSelector((state) => state.blogs);
-  const errorFetching = useSelector((state) => state.error);
-  const dispatch = useDispatch();
-
-  // Note: prev-sol: using useFetch.js
+  // Note: prev-sol using useFetch.js
   // const {
   //   data: blogs,
   //   loading,
   //   error,
   // } = useFetch("http://localhost:7000/Blogs");
+
+
+  // using redux store:
+  const blogs = useSelector((state) => state.blogs);
+  // const error = useSelector((state) => state.error);
+
+  const dispatch = useDispatch();
 
   // get data for first home render
   useEffect(() => {
@@ -42,15 +45,18 @@ const Home = () => {
       // API data request
       dispatch({ type: "FETCH_DATA_REQUEST" });
 
-      const response = await fetch("http://localhost:70007/Blogs");
+      const response = await fetch("http://localhost:7000/Blogs");
       const responseData = await response.json();
 
       // console.log("Response data: ", responseData);
-
+    
+      
       // Fetching data, Success
       dispatch({ type: "FETCH_DATA_SUCCESS", payload: responseData });
+      
+      
 
-      console.log("Blogs: ", blogs);
+      // console.log("Blogs: ", blogs);
     } catch (error) {
       // Fetching data, Failure
       dispatch({ type: "FETCH_DATA_FAILURE", payload: error.message });
@@ -62,7 +68,7 @@ const Home = () => {
     blog?.title.toLowerCase().includes(searchedValue.toLowerCase())
   );
 
-  // Note: prev-sol: using useFetch.js
+  // Note: prev-sol using useFetch.js
   // if (loading) return "Loading...";
   // if (error) return "Error happened!";
 

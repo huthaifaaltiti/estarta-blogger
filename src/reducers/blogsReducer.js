@@ -22,7 +22,7 @@ const namesReducer = (state = initialState, action) => {
         blogs: action.payload,
       };
 
-      case "FETCH_DATA_FAILURE":
+    case "FETCH_DATA_FAILURE":
       return {
         ...state,
         loading: false,
@@ -35,5 +35,3 @@ const namesReducer = (state = initialState, action) => {
 };
 
 export default namesReducer;
-
-

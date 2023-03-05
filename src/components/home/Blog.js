@@ -1,3 +1,5 @@
+
+
 // styles, icons
 import Styles from "./styles.module.css";
 import {
@@ -64,7 +66,11 @@ export default function Blog({ blog }) {
               </div>
             ) : (
               <>
-                <Link to={`/single/${editableBlog?.id}`} key={editableBlog?.id}>
+                <Link
+                  
+                  to={`/single/${editableBlog?.id}`}
+                  key={editableBlog?.id}
+                >
                   {editableBlog?.title}
                 </Link>
                 <CiEdit className={Styles.iconEditTitle} onClick={handleEdit} />
