@@ -22,8 +22,10 @@ const Home = () => {
   const [searchedValue, setSearchedValue] = useState("");
 
   const blogs = useSelector((state) => state.blogs);
+  const errorFetching = useSelector((state) => state.error);
   const dispatch = useDispatch();
 
+  // Note: prev-sol: using useFetch.js
   // const {
   //   data: blogs,
   //   loading,
@@ -40,7 +42,7 @@ const Home = () => {
       // API data request
       dispatch({ type: "FETCH_DATA_REQUEST" });
 
-      const response = await fetch("http://localhost:7000/Blogs");
+      const response = await fetch("http://localhost:70007/Blogs");
       const responseData = await response.json();
 
       // console.log("Response data: ", responseData);
@@ -60,6 +62,7 @@ const Home = () => {
     blog?.title.toLowerCase().includes(searchedValue.toLowerCase())
   );
 
+  // Note: prev-sol: using useFetch.js
   // if (loading) return "Loading...";
   // if (error) return "Error happened!";
 
