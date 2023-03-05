@@ -20,7 +20,7 @@ export default function useFetch(url) {
 }
 
 
-// another solution to get data from API
+// Note: another solution to get data from API:
 
 // const [data, setData] = useState([]);
 

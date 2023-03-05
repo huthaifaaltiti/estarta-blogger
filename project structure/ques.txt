@@ -5,3 +5,5 @@
 
  - at app comp: Q: when put <BrowserRouter></BrowserRouter> 
  around the app content "as docs: link: https://reactrouter.com/en/main/router-components/browser-router" gave an error?
+
+ - header => styles

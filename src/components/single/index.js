@@ -6,15 +6,17 @@ import { CiUser, CiStickyNote, CiSquareChevRight } from "react-icons/ci";
 // react-redux
 import { useDispatch, useSelector } from "react-redux";
 
-// react-router-dom, react
+// react
 import React from "react";
-import { useNavigate, useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
+
+// react-router-dom
+import { useNavigate, useParams } from "react-router-dom";
 
 // react-helmet
 import { Helmet } from "react-helmet";
 
-// custom hook (used for previous solution)
+// custom hook (used for previous solution):
 // import useFetch from "../../hooks/useFetch";
 
 export default function Single() {
@@ -30,27 +32,27 @@ export default function Single() {
 
   // stored blog
   const activeBlog = useSelector((state) => state.activeBlog);
-
   // console.log("Active blog details: ", activeBlog);
+  const loadingStatus = useSelector((state) => state.loading);
 
   const dispatch = useDispatch();
 
   // blog fetching
   useEffect(() => {
-    fetchSingleData();
+    fetchSingleBlog();
 
     return () => {
-      // Note: in general useEffect does not has a return word, but this return used to delete any effects after the comp not have the desired time to mount
+      // Note: in general useEffect does not has a return word, but this return used to delete any effects after the comp not have the desired time to mount (clean-up function)
 
       dispatch({ type: "FETCH_DATA_SINGLE_DELETE", payload: {} });
 
-      // console.log("I am out of single blog!");
+      // console.log("I am out of a single blog!");
     };
   }, []);
 
-  async function fetchSingleData() {
+  async function fetchSingleBlog() {
     try {
-      // API blog request
+      // API data request
       dispatch({ type: "FETCH_DATA_REQUEST" });
 
       const response = await fetch(`http://localhost:7000/Blogs/${id}`);
@@ -67,15 +69,16 @@ export default function Single() {
 
   function handleDelete() {
     // Fetching blog, Delete
-    const resp = fetch(`http://localhost:7000/Blogs/${id}`, {
+    const response = fetch(`http://localhost:7000/Blogs/${id}`, {
       method: "DELETE",
     });
-    dispatch({ type: "FETCH_DATA_SUCCESS_SIN", payload: resp });
 
-    nav("/");
+    dispatch({ type: "FETCH_DATA_SINGLE_DELETE", payload: response });
+
+    handleBackHome();
   }
 
-  function handleBackhome() {
+  function handleBackHome() {
     nav("/");
   }
 
@@ -115,7 +118,7 @@ export default function Single() {
           <div className={Styles.btns}>
             <button onClick={handleDelete}>Delete Blog</button>
 
-            <button onClick={handleBackhome} className={Styles.backBtn}>
+            <button onClick={handleBackHome} className={Styles.backBtn}>
               Back to blogs
             </button>
           </div>

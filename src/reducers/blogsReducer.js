@@ -11,18 +11,30 @@ const namesReducer = (state = initialState, action) => {
     case "FETCH_DATA_REQUEST":
       return {
         ...state,
+        error:null,
         loading: true,
-        error: null,
       };
 
+      // blogs, Success
     case "FETCH_DATA_SUCCESS":
       return {
         ...state,
         loading: false,
+        error:null,
         blogs: action.payload,
       };
 
+      // Single page blog, Success
     case "FETCH_DATA_SUCCESS_SINGLE":
+      return {
+        ...state,
+        loading: false,
+        error: null,
+        activeBlog: action.payload,
+      };
+
+      // delete blog
+    case "FETCH_DATA_SINGLE_DELETE":
       return {
         ...state,
         loading: false,
@@ -30,14 +42,7 @@ const namesReducer = (state = initialState, action) => {
         activeBlog: action.payload,
       };
 
-      case "FETCH_DATA_SINGLE_DELETE":
-        return {
-          ...state,
-          loading: false,
-  
-          activeBlog: action.payload,
-        };
-
+      // blogs, blog fetching failure
     case "FETCH_DATA_FAILURE":
       return {
         ...state,

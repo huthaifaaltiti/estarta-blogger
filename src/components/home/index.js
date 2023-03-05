@@ -28,16 +28,14 @@ const Home = () => {
   //   error,
   // } = useFetch("http://localhost:7000/Blogs");
 
-  // using redux store:
-
   
-  const dispatch = useDispatch();
-  
-  // fetching blog
+  // 2nd sol: fetching blogs using redux store
   useEffect(() => {
     fetchData();
   }, []);
+  
   const blogs = useSelector((state) => state.blogs);
+  const dispatch = useDispatch();
 
   // console.log(blogs);
   
@@ -49,10 +47,10 @@ const Home = () => {
       const response = await fetch("http://localhost:7000/Blogs");
       const responseData = await response.json();
 
-      // Fetching data, Success
+      // Fetching blogs, Success
       dispatch({ type: "FETCH_DATA_SUCCESS", payload: responseData });
     } catch (error) {
-      // Fetching data, Failure
+      // Fetching blogs, Failure
       dispatch({ type: "FETCH_DATA_FAILURE", payload: error.message });
       console.log(error);
     }
