@@ -21,7 +21,8 @@ const NewBlog = () => {
   });
 
   function handleChangeForm(e) {
-    // Note: here is destructuring for myRef.current obj, and get back with  these values
+    // Note: here is destructuring for myRef.current obj, and get back with these values
+
     myRef.current = {
       ...myRef.current,
       [e.target.name]: e.target.value,
@@ -30,7 +31,9 @@ const NewBlog = () => {
 
   async function handleSubmit(e) {
     e.preventDefault();
+
     // Note: form behavior when click "Submit" will make page-reload, so use the line before.
+
     await fetch("http://localhost:7000/blogs", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -53,6 +56,7 @@ const NewBlog = () => {
         </header>
         <form onSubmit={handleSubmit}>
           {/* Note: handleSubmit is equal to (e) => handleSubmit(e) */}
+
           <label>
             Blog title
             <input

@@ -28,17 +28,16 @@ const Home = () => {
   //   error,
   // } = useFetch("http://localhost:7000/Blogs");
 
-  
   // 2nd sol: fetching blogs using redux store
   useEffect(() => {
     fetchData();
   }, []);
-  
+
   const blogs = useSelector((state) => state.blogs);
   const dispatch = useDispatch();
 
   // console.log(blogs);
-  
+
   async function fetchData() {
     try {
       // API data request
