@@ -15,7 +15,7 @@ import { Helmet } from "react-helmet";
 // component
 import Blog from "./Blog";
 
-// custom hook (used for previous solution)
+// 1st solution: using custom hook
 // import useFetch from "../../hooks/useFetch";
 
 const Home = () => {

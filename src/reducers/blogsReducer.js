@@ -6,7 +6,7 @@ const initialState = {
   activeBlog: {},
 };
 
-const namesReducer = (state = initialState, action) => {
+const blogsReducer = (state = initialState, action) => {
   switch (action.type) {
     case "FETCH_DATA_REQUEST":
       return {
@@ -55,4 +55,4 @@ const namesReducer = (state = initialState, action) => {
   }
 };
 
-export default namesReducer;
+export default blogsReducer;
