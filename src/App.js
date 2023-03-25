@@ -1,25 +1,18 @@
-// react-router-dom
-import { Routes, Route } from "react-router-dom";
-// import Home from "./components/home/index";
-// import Header from "./components/header/index";
-// import NewBlog from "./components/newBlog/index";
-// import NotFound from "./components/notFound/index";
-// import Single from "./components/single/index";
-
 // react
 import { lazy, Suspense } from "react";
-
-
+// react-router-dom
+import { Routes, Route } from "react-router-dom";
+// component
+import Header from "./components/Header/index"
 
 // styles
 import "./App.css";
 
 // pages
-const Home = lazy(() => import("./components/home/index"));
-const Header = lazy(() => import("./components/header/index"));
-const NewBlog = lazy(() => import("./components/newBlog/index"));
-const NotFound = lazy(() => import("./components/notFound/index"));
-const Single = lazy(() => import("./components/single/index"));
+const Home = lazy(() => import("../src/pages/Home/index.js"));
+const NewBlog = lazy(() => import("../src/pages/NewBlog/index.js"));
+const NotFound = lazy(() => import("../src/pages/NotFound/index.js"));
+const SingleBlog = lazy(() => import("../src/pages/SingleBlog/index.js"));
 
 function App() {
   return (
@@ -31,7 +24,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/new-blog" element={<NewBlog />} />
-          <Route path="/single/:id" element={<Single />} />
+          <Route path="/single/:id" element={<SingleBlog />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Suspense>

@@ -8,33 +8,21 @@
     },
     {
       "id": "2",
-      "author": "Jack",
-      "title": "Back-End Developer",
-      "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    },
-    {
-      "id": "3",
       "author": "Asma'",
       "title": "SEO Optimizer",
       "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
     },
     {
-      "id": "4",
-      "author": "Natali",
-      "title": "UX/Xi Designer",
+      "id": "3",
+      "author": "Calmia",
+      "title": "Back-End Developer",
       "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
     },
     {
-      "id": "5",
+      "id": "4",
       "author": "John",
       "title": "IOS DEveloper",
       "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
     }
-  ],
-  "Names": [
-    "Huthaifa",
-    "Jack",
-    "Asma'",
-    "Natali"
   ]
 }

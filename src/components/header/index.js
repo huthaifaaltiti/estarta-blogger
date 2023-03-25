@@ -1,10 +1,10 @@
-// styles, icons
-import "../../index.css";
-import Styles from "./styles.module.css";
-import { CiHome, CiLogin, CiSquarePlus } from "react-icons/ci";
-
 // react-router-dom
 import { Link } from "react-router-dom";
+
+// styles, icons
+import Styles from "./styles.module.css";
+import "../../index.css";
+import { CiHome, CiLogin, CiSquarePlus } from "react-icons/ci";
 
 const Header = () => {
   return (

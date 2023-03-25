@@ -1,4 +1,4 @@
-- We can see what server has by: json-server --watch data/db.json --port 7000
+- We can see what server has by: npx json-server --watch data/db.json --port 7000
 
 - 1st lecture "18-2-23": 
  - part 1:
