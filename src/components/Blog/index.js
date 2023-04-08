@@ -14,8 +14,8 @@ import {
 import { ImCheckmark, ImCross } from "react-icons/im";
 
 export default function Blog({ blog }) {
-  const [editableBlog, setEditableBlog] = useState(blog);
   const [isEditable, setIsEditable] = useState(false);
+  const [editableBlog, setEditableBlog] = useState(blog);
   const [newTitle, setNewTitle] = useState("");
 
   function handleEdit() {

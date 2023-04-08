@@ -32,7 +32,7 @@ export default function Single() {
   const { id } = useParams();
   const nav = useNavigate();
   const { activeBlog } = useSelector((state) => state.blogsReducer);
-  const loading = useSelector((state) => state.blogsReducer);
+  // const loading = useSelector((state) => state.blogsReducer);
   const dispatch = useDispatch();
 
   // blog fetching
